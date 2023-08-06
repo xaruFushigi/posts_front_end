@@ -178,7 +178,7 @@ const Profile = () => {
         </div>
 
         <div>
-          <h2>Joined date : {profileInfo.createdAt.substring(0, 10)}</h2>
+          {/* <h2>Joined date : {profileInfo.createdAt.substring(0, 10)}</h2> */}
         </div>
       </div>
 
