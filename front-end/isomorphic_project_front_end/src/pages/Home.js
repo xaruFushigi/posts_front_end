@@ -13,14 +13,17 @@ const Home = () => {
   // fetching all posts in the database
   const fetchAllPosts = async () => {
     try {
-      const response = await fetch("http://localhost:10000/posts", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          accessToken: getAccessToken,
-        },
-        mode: "cors",
-      });
+      const response = await fetch(
+        "https://posts-back-end.onrender.com/posts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            accessToken: getAccessToken,
+          },
+          mode: "cors",
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         setListOfPosts(data.listOfPosts);
@@ -77,7 +80,7 @@ const Home = () => {
   // Like button on post
   const onClickLikeButton = async (postId) => {
     try {
-      const response = await fetch("http://localhost:10000/like", {
+      const response = await fetch("https://posts-back-end.onrender.com/like", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

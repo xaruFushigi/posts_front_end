@@ -20,19 +20,22 @@ const CreatePost = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:10000/posts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accessToken: getAccessToken,
-        },
-        body: JSON.stringify({
-          title: data.title,
-          postText: data.postText,
-          username: data.username,
-        }),
-        mode: "cors",
-      });
+      const response = await fetch(
+        "https://posts-back-end.onrender.com/posts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accessToken: getAccessToken,
+          },
+          body: JSON.stringify({
+            title: data.title,
+            postText: data.postText,
+            username: data.username,
+          }),
+          mode: "cors",
+        }
+      );
       if (response.ok) {
         navigate("/");
       } else {

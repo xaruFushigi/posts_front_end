@@ -20,15 +20,18 @@ const LogIn = () => {
   // sends username and password input to back-end
   const onClickLogInButton = async () => {
     try {
-      const response = await fetch("http://localhost:10000/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
-        mode: "cors",
-      });
+      const response = await fetch(
+        "https://posts-back-end.onrender.com/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: username,
+            password: password,
+          }),
+          mode: "cors",
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("accessToken", data.accessToken);

@@ -21,14 +21,17 @@ const AuthContext = (props) => {
   // retrieve from back-end accessToken's validateToken to avoid fake accessToken
   const fetchValidToken = async () => {
     try {
-      const response = await fetch("http://localhost:10000/auth/validToken", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          accessToken: getAccessToken,
-        },
-        mode: "cors",
-      });
+      const response = await fetch(
+        "https://posts-back-end.onrender.com/auth/validToken",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            accessToken: getAccessToken,
+          },
+          mode: "cors",
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         setLoggedIn({

@@ -31,7 +31,7 @@ const ChangePasswordOfUser = () => {
   const onSubmit = async (data) => {
     try {
       const response = await fetch(
-        `http://localhost:10000/auth/changePassword`,
+        `https://posts-back-end.onrender.com/auth/changePassword`,
         {
           method: "PUT",
           headers: {

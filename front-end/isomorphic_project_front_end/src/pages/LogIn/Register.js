@@ -20,15 +20,18 @@ const Register = () => {
   const onSubmitRegisterButton = async (event) => {
     console.log(event);
     try {
-      const response = await fetch(`http://localhost:10000/auth/register`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: event.username,
-          password: event.password,
-        }),
-        mode: "cors",
-      });
+      const response = await fetch(
+        `https://posts-back-end.onrender.com/auth/register`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: event.username,
+            password: event.password,
+          }),
+          mode: "cors",
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         console.log(data);

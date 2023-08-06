@@ -20,7 +20,7 @@ const Profile = () => {
   const fetchUserByIdForProfilePage = async () => {
     try {
       const response = await fetch(
-        `http://localhost:10000/auth/profile/byId/${profileId}`,
+        `https://posts-back-end.onrender.com/auth/profile/byId/${profileId}`,
         {
           method: "GET",
           headers: {
@@ -43,7 +43,7 @@ const Profile = () => {
   const fetchUserPostsByIdForProfilePage = async () => {
     try {
       const response = await fetch(
-        `http://localhost:10000/posts/byProfileId/${profileId}`,
+        `https://posts-back-end.onrender.com/byProfileId/${profileId}`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
@@ -101,7 +101,7 @@ const Profile = () => {
   // Like button on post
   const onClickLikeButton = async (postId) => {
     try {
-      const response = await fetch("http://localhost:10000/like", {
+      const response = await fetch("https://posts-back-end.onrender.com/like", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

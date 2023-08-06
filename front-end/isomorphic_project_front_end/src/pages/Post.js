@@ -12,7 +12,7 @@ const Post = () => {
   // fetches selected post
   const fetchPostsById = async () => {
     const response = await fetch(
-      `http://localhost:10000/posts/byPostId/${id}`,
+      `https://posts-back-end.onrender.com/posts/byPostId/${id}`,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -28,11 +28,14 @@ const Post = () => {
   };
   // displays selected post's comments
   const fetchPostIdByComment = async () => {
-    const response = await fetch(`http://localhost:10000/comments/${id}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-      mode: "cors",
-    });
+    const response = await fetch(
+      `https://posts-back-end.onrender.com/comments/${id}`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        mode: "cors",
+      }
+    );
     if (response.ok) {
       const data = await response.json();
       setListOfComments(data);
@@ -42,14 +45,17 @@ const Post = () => {
   };
   // Delete Post by Id
   const onCLickDeletePostById = async () => {
-    const response = await fetch(`http://localhost:10000/posts/byId/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        accessToken: getAccessToken,
-      },
-      mode: "cors",
-    });
+    const response = await fetch(
+      `https://posts-back-end.onrender.com/posts/byId/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          accessToken: getAccessToken,
+        },
+        mode: "cors",
+      }
+    );
     if (response.ok) {
       const data = await response.json();
       alert(data.message);
@@ -61,18 +67,21 @@ const Post = () => {
   // add comment(s) to the selected post
   const onClickAddComment = async () => {
     try {
-      const response = await fetch(`http://localhost:10000/comments`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accessToken: getAccessToken,
-        },
-        mode: "cors",
-        body: JSON.stringify({
-          commentBody: newComment,
-          PostId: id, // from useParams
-        }),
-      });
+      const response = await fetch(
+        `https://posts-back-end.onrender.com/comments`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accessToken: getAccessToken,
+          },
+          mode: "cors",
+          body: JSON.stringify({
+            commentBody: newComment,
+            PostId: id, // from useParams
+          }),
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         const commentToAdd = {
@@ -94,7 +103,7 @@ const Post = () => {
   // delete user's comment
   const onClickDeleteCommentButton = async (event) => {
     const response = await fetch(
-      `http://localhost:10000/comments/delete/${event}`,
+      `https://posts-back-end.onrender.com/comments/delete/${event}`,
       {
         method: "DELETE",
         headers: {
@@ -139,7 +148,7 @@ const Post = () => {
       let newTitle = prompt("Enter new Title: ");
       try {
         const response = await fetch(
-          `http://localhost:10000/posts/updatePostTitle`,
+          `https://posts-back-end.onrender.com/posts/updatePostTitle`,
           {
             method: "PUT",
             headers: {
@@ -169,7 +178,7 @@ const Post = () => {
       let newBody = prompt("Enter new text: ");
       try {
         const response = await fetch(
-          "http://localhost:10000/posts/updatePostBody",
+          "https://posts-back-end.onrender.com/posts/updatePostBody",
           {
             method: "PUT",
             headers: {
