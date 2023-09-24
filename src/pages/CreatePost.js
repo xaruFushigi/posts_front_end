@@ -54,7 +54,7 @@ const CreatePost = () => {
   });
 
   return (
-    <div className="createPostPage ml7">
+    <div className="createPostPage">
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}

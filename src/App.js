@@ -38,8 +38,8 @@ function App() {
               </>
             ) : (
               <>
-                <Link to="/"> Welcome Home Page</Link>
-                <Link to="/createPost"> Create a Post</Link>
+                <Link to="/"> Home</Link>
+                <Link to="/createPost"> New Post</Link>
 
                 <div className="loggedInContainer">
                   <Link className="mr2" to={`/profile/${loggedIn.id}`}>
