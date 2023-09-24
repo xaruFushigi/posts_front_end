@@ -52,8 +52,16 @@ const LogIn = () => {
   };
   return (
     <div className="loginContainer">
-      <input type="text" onChange={onChangeUsernameValue} />
-      <input type="password" onChange={onChangePasswordValue} />
+      <input
+        type="text"
+        onChange={onChangeUsernameValue}
+        placeholder="username"
+      />
+      <input
+        type="password"
+        onChange={onChangePasswordValue}
+        placeholder="password"
+      />
 
       <button onClick={onClickLogInButton}>Log In</button>
     </div>
