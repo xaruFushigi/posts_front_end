@@ -45,7 +45,7 @@ const Register = () => {
   };
   return (
     <div>
-      <div className="pa2">
+      <div className="pa2 mt5">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
