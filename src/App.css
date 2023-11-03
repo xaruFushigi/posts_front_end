@@ -292,7 +292,7 @@ body {
   }
 }
 
-@media (max-width: 428px) {
+@media (orientation: portrait) {
   .post {
     width: 400px;
     height: 300px;
@@ -575,7 +575,7 @@ body {
   }
 }
 
-@media (max-width: 926px) {
+@media (orientation: landscape) {
   .post {
     width: 400px;
     height: 300px;
