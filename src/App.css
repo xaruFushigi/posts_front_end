@@ -12,7 +12,6 @@ body {
   padding: 0;
 }
 
-@media (min-width: 1024px) {
   .post {
     width: 400px;
     height: 300px;
@@ -290,7 +289,7 @@ body {
   .loginContainer input {
     border: 2px solid dodgerblue;
   }
-}
+
 
 @media (orientation: portrait) {
   .post {
