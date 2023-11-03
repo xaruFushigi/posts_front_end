@@ -17,8 +17,6 @@ body {
     height: 300px;
     border-radius: 10px;
     display: flex;
-    min-width: 1024px;
-    max-width: none;
     flex-direction: column;
     margin-top: 50px;
     border: 1px solid lightgray;
